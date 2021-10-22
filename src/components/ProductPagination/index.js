@@ -20,16 +20,15 @@ const ProductPagination = () => {
   const [paginationItems, setPaginationItems] = useState([]);
 
   useEffect(() => {
+    const renderPaginationItems = () => {
+      const items = [];
+      for (let page = 1; page <= totalPages; page++) {
+        items.push({ page });
+      }
+      setPaginationItems(items);
+    };
     renderPaginationItems();
   }, [totalPages]);
-
-  const renderPaginationItems = () => {
-    const items = [];
-    for (let page = 1; page <= totalPages; page++) {
-      items.push({ page });
-    }
-    setPaginationItems(items);
-  };
 
   const changePage = (page) => {
     if (page === currentPage) return;

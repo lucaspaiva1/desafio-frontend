@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 
@@ -26,8 +27,10 @@ const ProductList = () => {
   const products = useSelector(selectProductItems);
   const totalItems = useSelector(selectProductTotalItems);
 
+  const listProducts = () => dispatch(listRequest());
+
   useEffect(() => {
-    dispatch(listRequest());
+    listProducts();
   }, []);
 
   return (
