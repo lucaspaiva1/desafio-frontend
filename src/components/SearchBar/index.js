@@ -16,6 +16,7 @@ const SearchBar = () => {
   };
 
   const onClear = () => {
+    setSearch("");
     dispatch(listRequest({ page: 1, search: "" }));
   };
 
