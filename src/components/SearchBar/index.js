@@ -1,11 +1,9 @@
 import React, { useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
-
+import { useDispatch } from "react-redux";
 import { listRequest } from "./../../redux/ducks/Product/actions";
-
 import { Form } from "react-bootstrap";
-
-import { Container } from "./styles";
+import { Container, ClearSearch } from "./styles";
+import { CloseButton } from "react-bootstrap";
 
 const SearchBar = () => {
   const [search, setSearch] = useState("");
@@ -17,6 +15,10 @@ const SearchBar = () => {
     dispatch(listRequest({ page: 1, search }));
   };
 
+  const onClear = () => {
+    dispatch(listRequest({ page: 1, search: "" }));
+  };
+
   return (
     <Container onSubmit={onSubmit}>
       <Form.Control
@@ -25,6 +27,9 @@ const SearchBar = () => {
         value={search}
         onChange={(e) => setSearch(e.target.value)}
       />
+      <ClearSearch onClick={onClear}>
+        <CloseButton />
+      </ClearSearch>
     </Container>
   );
 };
