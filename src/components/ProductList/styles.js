@@ -8,6 +8,7 @@ export const ItemsCount = styled.h4`
   width: 100%;
   max-width: 1024px;
   margin: auto;
+  font-size: 14px;
 `;
 
 export const ListScroll = styled.div`
