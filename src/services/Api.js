@@ -24,8 +24,8 @@ const create = (baseURL = APIBaseUrl) => {
     },
   });
 
-  const listProducts = async (page, rows, search) => {
-    const response = await api.get("/products");
+  const listProducts = async (payload) => {
+    const response = await api.get("/products", payload);
     return handleResponse(response);
   };
 

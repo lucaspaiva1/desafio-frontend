@@ -24,3 +24,13 @@ export const selectProductTotalPages = createSelector(
   selectProductState,
   (product) => product.products.totalPages || 0
 );
+
+export const selectProductTotalItems = createSelector(
+  selectProductState,
+  (product) => product.products.totalItems || 0
+);
+
+export const selectProductCurrentPage = createSelector(
+  selectProductState,
+  (product) => product.products.page || 0
+);

@@ -2,7 +2,10 @@ import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 
 import { listRequest } from "./../../redux/ducks/Product/actions";
-import { selectProductTotalPages } from "./../../redux/ducks/Product/selectors";
+import {
+  selectProductTotalPages,
+  selectProductCurrentPage,
+} from "./../../redux/ducks/Product/selectors";
 
 import { Container, PageItem } from "./styles";
 
@@ -10,8 +13,7 @@ const ProductPagination = () => {
   const dispatch = useDispatch();
 
   const totalPages = useSelector(selectProductTotalPages);
-
-  const currentPage = 1;
+  const currentPage = useSelector(selectProductCurrentPage);
 
   const [paginationItems, setPaginationItems] = useState([]);
 
@@ -27,11 +29,21 @@ const ProductPagination = () => {
     setPaginationItems(items);
   };
 
+  const changePage = (page) => {
+    if (page === currentPage) return;
+
+    dispatch(listRequest({ page }));
+  };
+
   return (
     <Container>
       {paginationItems.map((item) => {
         return (
-          <PageItem key={item.page} active={item.page === currentPage}>
+          <PageItem
+            key={item.page}
+            active={item.page === currentPage}
+            onClick={() => changePage(item.page)}
+          >
             {item.page}
           </PageItem>
         );
