@@ -1,5 +1,7 @@
 import React from "react";
 
+import PriceHandler from "./../../utils/PriceHandler";
+
 import {
   Container,
   ImageContainer,
@@ -20,7 +22,7 @@ const ProductItem = ({ product }) => {
         <ProductTitle>{product.title}</ProductTitle>
         <ProductDescription>{product.description}</ProductDescription>
       </DescriptionContainer>
-      <ProductPrice>{product.price}</ProductPrice>
+      <ProductPrice>{PriceHandler.parse(product.price / 100)}</ProductPrice>
     </Container>
   );
 };
