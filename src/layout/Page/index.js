@@ -1,8 +1,14 @@
 import React from "react";
-import { Container } from "./styles";
+import { Container, Content } from "./styles";
+import { PageTitle } from "./../../components";
 
-const Page = ({ children }) => {
-  return <Container>{children}</Container>;
+const Page = ({ title, children }) => {
+  return (
+    <Container>
+      <PageTitle title={title} />
+      <Content>{children}</Content>
+    </Container>
+  );
 };
 
 export default Page;

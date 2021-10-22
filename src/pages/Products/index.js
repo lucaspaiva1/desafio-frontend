@@ -1,7 +1,7 @@
 import React from "react";
 import { useSelector } from "react-redux";
-import { Page, Nav } from "./../../layout";
-import { PageLoader } from "./../../components";
+import { Page } from "./../../layout";
+import { PageLoader, ProductList } from "./../../components";
 import { selectProductsLoading } from "./../../redux/ducks/Product/selectors";
 import { Container } from "./styles";
 
@@ -9,9 +9,11 @@ const ProductsPage = () => {
   const loading = useSelector(selectProductsLoading);
 
   return (
-    <Page>
+    <Page title="Produtos">
       <PageLoader loading={loading} />
-      <Container>Products Page</Container>
+      <Container>
+        <ProductList />
+      </Container>
     </Page>
   );
 };
