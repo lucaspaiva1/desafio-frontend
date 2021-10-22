@@ -2,7 +2,7 @@ import PRODUCT from "./types";
 import Immutable from "seamless-immutable";
 
 export const INITIAL_STATE = Immutable({
-  products: [],
+  products: {},
   loading: false,
   error: null,
 });

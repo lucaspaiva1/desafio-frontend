@@ -1,16 +1,16 @@
 import SERVICE from "./types";
 
 export const listRequest = (payload) => ({
-  type: SERVICE.LIST_REQUEST,
+  type: SERVICE.LIST_PRODUCTS_REQUEST,
   payload,
 });
 
-export const listRequestSuccess = (services) => ({
-  type: SERVICE.LIST_REQUEST_SUCCESS,
-  services,
+export const listRequestSuccess = (products) => ({
+  type: SERVICE.LIST_PRODUCTS_REQUEST_SUCCESS,
+  products,
 });
 
 export const listRequestFail = (error) => ({
-  type: SERVICE.LIST_REQUEST_FAIL,
+  type: SERVICE.LIST_PRODUCTS_REQUEST_FAIL,
   error,
 });

@@ -15,7 +15,12 @@ export const selectProductsError = createSelector(
   (product) => product.error
 );
 
-export const selectProducts = createSelector(
+export const selectProductItems = createSelector(
   selectProductState,
-  (product) => product.products
+  (product) => product.products.items || []
+);
+
+export const selectProductTotalPages = createSelector(
+  selectProductState,
+  (product) => product.products.totalPages || 0
 );

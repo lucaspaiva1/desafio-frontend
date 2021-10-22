@@ -9,7 +9,8 @@ export const Container = styled.div`
 
 export const Content = styled.div`
   height: 150px;
-  min-width: 1024px;
+  max-width: 1024px;
+  width: 100%;
   display: flex;
   align-items: center;
 `;
