@@ -5,10 +5,11 @@ export const INITIAL_STATE = Immutable({
   products: {},
   loading: false,
   error: null,
+  payload: {},
 });
 
-export const listProductsRequest = (state) =>
-  state.merge({ loading: true, error: null });
+export const listProductsRequest = (state, { payload }) =>
+  state.merge({ loading: true, error: null, payload });
 
 export const listProductsRequestSuccess = (state, { products }) =>
   state.merge({ products, loading: false, error: null });

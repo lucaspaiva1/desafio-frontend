@@ -34,3 +34,8 @@ export const selectProductCurrentPage = createSelector(
   selectProductState,
   (product) => product.products.page || 0
 );
+
+export const selectProductPayload = createSelector(
+  selectProductState,
+  (product) => product.payload
+);

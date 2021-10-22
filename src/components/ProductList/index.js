@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 
 import { listRequest } from "./../../redux/ducks/Product/actions";
@@ -24,9 +24,9 @@ const ProductList = () => {
     <Container>
       {totalItems === 0 && <ItemsCount>Nenhum produto encontrado!</ItemsCount>}
       {totalItems === 1 && (
-        <ItemsCount>{totalItems} produto encontrados</ItemsCount>
+        <ItemsCount>Apenas {totalItems} produto foi encontrado</ItemsCount>
       )}
-      {totalItems > 0 && (
+      {totalItems > 1 && (
         <ItemsCount>{totalItems} produtos encontrados</ItemsCount>
       )}
 

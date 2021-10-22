@@ -5,6 +5,7 @@ import { listRequest } from "./../../redux/ducks/Product/actions";
 import {
   selectProductTotalPages,
   selectProductCurrentPage,
+  selectProductPayload,
 } from "./../../redux/ducks/Product/selectors";
 
 import { Container, PageItem } from "./styles";
@@ -14,6 +15,7 @@ const ProductPagination = () => {
 
   const totalPages = useSelector(selectProductTotalPages);
   const currentPage = useSelector(selectProductCurrentPage);
+  const payload = useSelector(selectProductPayload);
 
   const [paginationItems, setPaginationItems] = useState([]);
 
@@ -32,7 +34,7 @@ const ProductPagination = () => {
   const changePage = (page) => {
     if (page === currentPage) return;
 
-    dispatch(listRequest({ page }));
+    dispatch(listRequest({ ...payload, page }));
   };
 
   return (
