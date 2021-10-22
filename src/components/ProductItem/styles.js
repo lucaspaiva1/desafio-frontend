@@ -24,7 +24,10 @@ export const DescriptionContainer = styled.div`
   flex: 1;
 `;
 
-export const ProductTitle = styled.div``;
+export const ProductTitle = styled.div`
+  font-size: 18px;
+  font-weight: bold;
+`;
 
 export const ProductDescription = styled.div`
   font-size: 12px;
