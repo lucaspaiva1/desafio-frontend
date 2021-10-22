@@ -7,8 +7,18 @@ import {
   selectProductTotalItems,
 } from "./../../redux/ducks/Product/selectors";
 
-import { ProductItem, ProductPagination } from "./../../components";
-import { Container, ItemsCount, ListScroll, ListContainer } from "./styles";
+import {
+  ProductItem,
+  ProductPagination,
+  ProductRowsSelector,
+} from "./../../components";
+import {
+  Container,
+  ItemsCount,
+  ListScroll,
+  ListContainer,
+  FooterContainer,
+} from "./styles";
 
 const ProductList = () => {
   const dispatch = useDispatch();
@@ -38,7 +48,10 @@ const ProductList = () => {
         </ListContainer>
       </ListScroll>
 
-      <ProductPagination />
+      <FooterContainer>
+        <ProductRowsSelector />
+        <ProductPagination />
+      </FooterContainer>
     </Container>
   );
 };

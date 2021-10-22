@@ -21,3 +21,12 @@ export const ListContainer = styled.div`
   max-width: 1024px;
   margin: auto;
 `;
+
+export const FooterContainer = styled.div`
+  display: flex;
+  width: 100%;
+  max-width: 1024px;
+  margin: auto;
+  justify-content: space-between;
+  padding: 2rem 0;
+`;
