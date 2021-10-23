@@ -3,7 +3,7 @@
 #### Setup environment
 
 ```bash
-yarn
+cp .env.example .env
 ```
 
 #### Install app dependencies.
