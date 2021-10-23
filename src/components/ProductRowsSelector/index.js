@@ -7,7 +7,7 @@ import { selectProductPayload } from "./../../redux/ducks/Product/selectors";
 import { Form } from "react-bootstrap";
 import { Container } from "./styles";
 
-const OPTIONS = [5, 10, 15, 20, 25];
+const OPTIONS = [10, 15, 20, 25];
 
 const ProductRowsSelector = () => {
   const dispatch = useDispatch();

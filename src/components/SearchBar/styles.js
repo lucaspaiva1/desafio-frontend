@@ -9,6 +9,10 @@ export const Container = styled.form`
   input {
     padding-right: 28px;
   }
+
+  @media only screen and (max-width: 900px) {
+    max-width: 50%;
+  }
 `;
 
 export const ClearSearch = styled.div`
