@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const Container = styled.div``;
 
 export const ItemsCount = styled.h4`
-  padding: 2rem 1rem;
+  padding: 2rem 0rem;
   margin: 0;
   width: 100%;
   max-width: 1024px;
