@@ -16,7 +16,7 @@ const ProductItem = ({ product }) => {
   return (
     <Container>
       <ImageContainer>
-        <ProductImage src="https://img2.gratispng.com/20180428/tew/kisspng-scandinavia-couch-furniture-living-room-sofa-bed-retro-sofa-5ae50261402745.6702032315249577932628.jpg" />
+        <ProductImage src={product.image} />
       </ImageContainer>
       <DescriptionContainer>
         <ProductTitle>{product.title}</ProductTitle>
